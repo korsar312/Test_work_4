@@ -19,6 +19,8 @@
         name: "ListView",
         data(){
             return{
+                arr: [],
+
                 listActive: true,
                 display: 'block',
                 sort: 'Перемешать',
@@ -39,29 +41,30 @@
                 }
             },
             renderList(){
-                let arr = []
+                this.arr=[]
                 this.prop.forEach(i=>{
                     if(i?.check){
                         if(this.sort === 'Сортировать'){
                             for(let el = 0; el<i.amount; el++){
-                                arr.push({
+                                this.arr.push({
                                     amount: 1,
                                     color: i.color,
                                     obj: i,
                                 })
                             }
-                            arr.sort(()=>Math.random()-0.5)
                         }
                         else{
-                                arr.push({
+                            this.arr.push({
                                     amount: i.amount,
                                     color: i.color,
                                     obj: i,
                                 })
+
                         }
                     }
                 })
-                return arr
+                this.arr.sort(()=>Math.random()-0.5)
+                return this.arr
             }
         },
         props:{

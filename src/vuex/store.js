@@ -7,13 +7,9 @@ const store = createStore({
         }
     },
     mutations: {
-
-    },
-    actions: {
-
-    },
-    getters:{
-
+        addProperty(state, payload){
+            payload.obj[payload.property] = payload.value
+        }
     },
 })
 

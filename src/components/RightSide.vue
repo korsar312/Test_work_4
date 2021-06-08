@@ -22,11 +22,9 @@
                 return arr
             }
         },
-        methods:{
-
-
-        },
-        components: {ListView}
+        components: {
+            ListView
+        }
     }
 </script>
 

@@ -38,19 +38,18 @@
                         return i
                     }
                 }).join('')
-                this.obj.amount = Number(amount)
+                this.$store.commit('addProperty',{obj:this.obj, property:'amount', value:Number(amount)})
                 this.amount = Number(amount)
-
             },
             color(){
-                this.obj.color = this.color
+                this.$store.commit('addProperty',{obj:this.obj, property:'color', value:this.color})
             },
             check(){
-                this.obj.check = this.check
+                this.$store.commit('addProperty',{obj:this.obj, property:'check', value:this.check})
             },
         },
         mounted() {
-            this.obj.name = 'Item ' + (this.prop.index+1)
+            this.$store.commit('addProperty',{obj:this.obj, property:'name', value:'Item ' + (this.prop.index+1)})
         },
         props:{
             prop:{

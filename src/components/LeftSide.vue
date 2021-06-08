@@ -10,13 +10,6 @@
     import List from "./List";
     export default {
         name: "LeftSide",
-        data() {
-            return{
-                count: 1,
-            }
-        },
-        methods:{
-        },
         components: {
             List,
         }

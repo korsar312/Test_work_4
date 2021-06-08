@@ -54,7 +54,7 @@
         },
         watch:{
             check(){
-                this.obj.check = this.check
+                this.$store.commit('addProperty',{obj:this.obj, property:'check', value:this.check})
             }
         },
         methods:{
@@ -82,12 +82,12 @@
                     if(this.stopWord.includes(i)){
                         continue
                     }
-                    this.obj[i].check = bool
+                    this.$store.commit('addProperty',{obj:this.obj[i], property:'check', value:bool})
                 }
             },
         },
         mounted() {
-            this.obj.name = 'List ' + (this.prop.index+1)
+            this.$store.commit('addProperty',{obj:this.obj, property:'name', value:'List ' + (this.prop.index+1)})
         },
         props:{
             prop:{

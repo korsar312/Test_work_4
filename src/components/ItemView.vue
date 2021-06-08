@@ -10,11 +10,7 @@
         },
         methods:{
             del(){
-                if(this.obj?.amount){
-                    this.obj.amount--
-                    return
-                }
-                this.obj.amount--
+                this.$store.commit('addProperty',{obj:this.obj, property:'amount', value:this.obj.amount-1})
             },
         },
         props:{
